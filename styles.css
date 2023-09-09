@@ -1,0 +1,92 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("bg/street-chinese-food-with-copy-space.jpg");
+    background-size: cover;
+}
+
+/* Landing Page Styles */
+#landing {
+    text-align: center;
+    padding: 100px;
+    background-color: transparent;
+    border-width: 30px;
+    border-radius: 30px;
+}
+
+#landing h1 {
+    font-size: 36px;
+    color:white;
+}
+#login-section, #signup-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#login-section h2, #signup-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#landing p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Login and Sign-up Page Styles */
+#login, #signup {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login h2, #signup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
