@@ -5,17 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Delivery Website</title>
     <link rel="stylesheet" href="del.css">
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <header>
         <h1>Food Delivery Service</h1>
-    </header>
-    <section id="menu">
-       
-    </section>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Food Delivery</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <button id="getLocationButton">Share Your Location</button>
 
-    <section id="cart">
-       
+            </ul>
+        </nav>
+    </header>
+    <section id="bar">
+        <div class="bar">
+            <img src="icons8-menu-50.png">
+        </div>
+        <p1>Hi there Ireri</p1>
+        <p>What can i do for you today?</p>
     </section>
 
     
@@ -23,34 +37,503 @@
         <input type="text" id="search-input" placeholder="Search...">
         <button type="button" id="search-button">Search</button>
     </div>
-    
     <section id="menu">
         <h2>Menu</h2>
+        <div id="category-buttons">
+            <div class="menu-item1">
+                <img src="icons/restaurant.png" alt="">
+                <button id="breakfast-button"class="icon">All</button>
+            </div>
+            <div class="menu-item1">
+                <img src="icons/burger.png" alt="">
+                <button id="dinner-button"class="icon">Snacks</button>
+            </div>
+            <div class="menu-item1">
+                <img src="icons/platter.png" alt="">
+                <button id="snacks-button"class="icon">Main</button>
+            </div>
+            <div class="menu-item1">
+                <img src="icons/orange-juice.png" alt="">
+                <button id="drinks-button"class="icon">Drinks</button>
+            </div>            
+            
+        </div>
+        <div class="category" id="breakfast-category">
+            <h3>All</h3>
+            <ul>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="category" id="dinner-category">
+            <h3>snacks</h3>
+            <ul>
+                <li>
+                    <div class="menu-item">
+                        <img src="snacks/burger1.jpg" alt="">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>ksh350</p>
+                        <button onclick="addToCart('Burger', 350)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="snacks/pizza2.jpg" alt="snacks">
+                        <h3>double Burger</h3>
+                        <p>double meat burger with fries.</p>
+                        <p>ksh650</p>
+                        <button onclick="addToCart('Burger', 650)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="snacks/pizza1.jpg" alt="Burger">
+                        <h3>18 inch pizza</h3>
+                        <p>chicken tikka with pepperoni toppings.</p>
+                        <p>ksh950</p>
+                        <button onclick="addToCart('Burger', 950)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="snacks/burger2.jpg" alt="Burger">
+                        <h3>hawain pizza</h3>
+                        <p>12 inch pizza</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="category" id="snacks-category">
+            <h3>main</h3>
+            <ul>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="category" id="drinks-category">
+            <h3>Drinks</h3>
+            <ul>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/dr1.jpg" alt="">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/dr2.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/dr3.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/dr4.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/dr5.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/brian-jones-YBlcnXfv9OM-unsplash.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/giancarlo-duarte-w2C731GlwKk-unsplash.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="drinks/john-hernandez-0-4zzoh3JXU-unsplash.jpgc:\Users\user\Downloads\brian-jones-YBlcnXfv9OM-unsplash.jpg c:\Users\user\Downloads\john-hernandez-0-4zzoh3JXU-unsplash.jpg c:\Users\user\Downloads\giancarlo-duarte-w2C731GlwKk-unsplash.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-item">
+                        <img src="images/menu-image1.jpg" alt="Burger">
+                        <h3>Burger</h3>
+                        <p>Delicious burger with all the fixings.</p>
+                        <p>$5.99</p>
+                        <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>    
+    <section id="menu">
+        <h2>top picks for you</h2>
         <ul>
             <li>
                 <div class="menu-item">
-                    <img src="burger.jpg" alt="Burger">
+                    <img src="images/menu-image1.jpg" alt="">
                     <h3>Burger</h3>
                     <p>Delicious burger with all the fixings.</p>
                     <p>$5.99</p>
                     <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
-                    <li>
-                        <div class="menu-item">
-                            <img src="burger.jpg" alt="Burger">
-                            <h3>Burger</h3>
-                            <!-- Rest of your menu item content -->
-                            <li>
-                                <div class="menu-item">
-                                    <img src="burger.jpg" alt="Burger">
-                                    <h3>Burger</h3>
-                                </div>
-                            </li>
-                            
-                        </div>
-                    </li>
-                    
                 </div>
-            
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
+            </li>
+            <li>
+                <div class="menu-item">
+                    <img src="images/menu-image1.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>Delicious burger with all the fixings.</p>
+                    <p>$5.99</p>
+                    <button onclick="addToCart('Burger', 5.99)">Add to Cart</button>
+                </div>
             </li>
         </ul>
     </section>
@@ -60,8 +543,43 @@
         <ul id="cart-items">
         </ul>
         <p>Total: $<span id="cart-total">0.00</span></p>
-        <button onclick="checkout()">Checkout</button>
+        <button id="checkout-button" onclick="checkout()">Checkout</button>
     </section>
+    
+    <section id="payment-button"style="display:none;">
+        <h2>Payment Information</h2>
+        <form id="payment-form">
+            
+        </form>
+    </section>
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiration">Expiration Date</label>
+                    <input type="text" id="expiration" name="expiration" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+                <div class="form-group">
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" name="cardholder-name" required>
+                </div>  `
+                <button type="submit" id="payment-button">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+    
+    <button id="getLocationButton">Share Your Location</button>
+
 
     <script src="del.js"></script>
 </body>
