@@ -14,6 +14,7 @@ searchButton.addEventListener('click', function () {
                 }
             });
         });
+
 let cart = [];
 const categoryButtons = document.querySelectorAll('#category-buttons button');
 const categories = document.querySelectorAll('.category');
