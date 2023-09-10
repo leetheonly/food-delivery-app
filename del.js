@@ -87,18 +87,16 @@ paymentForm.addEventListener('submit', function (e) {
 document.getElementById('payment-form').addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent the form from actually submitting
 
-    // Simulate a payment received alert
     alert('Payment received! Thank you for your payment.');
 
-    // You can redirect the user to a thank-you page or perform other actions here.
-});
+   
 const navLinks = document.querySelector('.nav-links');
 const menuToggle = document.querySelector('.menu-toggle');
 
 menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('show');
 });
-// JavaScript for asking for user's location
+
 const getLocationButton = document.getElementById('getLocationButton');
 
 getLocationButton.addEventListener('click', () => {
@@ -106,9 +104,6 @@ getLocationButton.addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition((position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            
-            // Use the latitude and longitude coordinates as needed
-            // For example, you can send these coordinates to your server to find nearby restaurants or stores.
             
             alert(`Your location: Latitude ${latitude}, Longitude ${longitude}`);
         }, (error) => {
@@ -131,14 +126,14 @@ getLocationButton.addEventListener('click', () => {
         alert("Geolocation is not supported by your browser.");
     }
 });
-// JavaScript for handling payments with Stripe
+
 const stripe = Stripe('pk_test_51NoMz0Dayuus0cY70DosgUEXPZV3SqAkDXm4GQBb34BE5uMl8Fq9OsFUNF31mWht6m5QkEPfEHLhuqGBwnZecXFB00tdtTT9aV');
 const elements = stripe.elements();
 
 // Create an instance of the card Element.
 const card = elements.create('card');
 
-// Add an instance of the card Element into the `card-element` div.
+
 card.mount('#card-element');
 
 const form = document.getElementById('payment-form');
@@ -147,11 +142,11 @@ const errorElement = document.getElementById('card-errors');
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    // Use Stripe.js to handle the payment
+   
     const { token, error } = await stripe.createToken(card);
 
     if (error) {
-        // Display any errors to the customer.
+       
         errorElement.textContent = error.message;
     } else {
         fetch('', {
@@ -167,7 +162,6 @@ form.addEventListener('submit', async (event) => {
                 alert('Payment successful!');
                 // Redirect or show a success message as needed.
             } else {
-                // Payment failed, handle error scenario.
                 alert('Payment failed. Please try again later.');
             }
         })
@@ -175,9 +169,7 @@ form.addEventListener('submit', async (event) => {
             console.error('Error:', error);
         });
     }
-        // Send the token to your server to complete the payment.
-        // You should implement server-side code to handle this token securely.
-        // Example: sendTokenToServer(token);
+        
         alert('Payment successful!');
     }
 );
